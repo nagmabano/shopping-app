@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:text="@string/header_label"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,13 +39,16 @@
 
     <Button
         android:id="@+id/checkout_button"
+        style="@style/MyButton"
+        android:foreground="?attr/selectableItemBackground"
         android:layout_width="415dp"
         android:layout_height="71dp"
         android:text="@string/button_label"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_image" />
+        app:layout_constraintTop_toBottomOf="@+id/item_image"
+        app:layout_constraintVertical_bias="0.516" />
 
     <LinearLayout
         android:layout_width="72dp"
@@ -60,9 +62,12 @@
 
         <ImageButton
             android:id="@+id/add_button"
+            style="@style/MyButton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:background="@color/white"
+            android:foreground="?attr/selectableItemBackground"
             android:src="@drawable/ic_add_button" />
 
         <EditText
@@ -75,9 +80,12 @@
 
         <ImageButton
             android:id="@+id/minus_button"
+            style="@style/MyButton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:background="@color/white"
+            android:foreground="?attr/selectableItemBackground"
             android:src="@drawable/ic_minus_button" />
     </LinearLayout>
 
