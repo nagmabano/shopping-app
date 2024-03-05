@@ -3,5 +3,4 @@
     <string name="header_label">Take my order</string>
     <string name="button_label">Checkout</string>
     <string name="item_name_label">Chocholate Box</string>
-    <string name="price_label">Rs</string>
 </resources>
