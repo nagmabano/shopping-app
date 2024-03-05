@@ -37,9 +37,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/checkout_button"
-        style="@style/MyButton"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
         android:foreground="?attr/selectableItemBackground"
         android:layout_width="415dp"
         android:layout_height="71dp"
@@ -62,7 +63,6 @@
 
         <ImageButton
             android:id="@+id/add_button"
-            style="@style/MyButton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -80,7 +80,6 @@
 
         <ImageButton
             android:id="@+id/minus_button"
-            style="@style/MyButton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
