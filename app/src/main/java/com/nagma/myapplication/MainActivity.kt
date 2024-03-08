@@ -10,6 +10,7 @@ import androidx.fragment.app.add
 import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
 import com.nagma.myapplication.databinding.ActivityMainBinding
+import java.lang.StringBuilder
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -21,6 +22,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val viewModel by viewModels<MainViewModel>()
+        viewModel.products.observe(this) { products ->
+            val productNames = StringBuilder()
+            products.forEach {
+                productNames.appendLine(it.name)
+            }
+
+            binding.itemName.text = productNames.toString()
+        }
+
 
         binding.addButton.setOnClickListener{ view ->
             viewModel.increaseItemCount()
@@ -43,9 +53,9 @@ class MainActivity : AppCompatActivity() {
             binding.itemPrice.setText("Rs." + viewModel.itemPrice.value.toString())
         }
 
-        supportFragmentManager.commit{
-            add<ProductFragment>(R.id.container, null)
-        }
+//        supportFragmentManager.commit{
+//            add<ProductFragment>(R.id.container, null)
+//        }
 
     }
 
