@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Chili",
+    "imageFile": "chili_bottle",
+    "description": "chili bottle description",
+    "size": 20,
+    "price": 54.35
+  },
+  {
+    "name": "honey",
+    "imageFile": "honey_bottle",
+    "description": "honey bottle description",
+    "size": 30,
+    "price": 46.35
+  },
+  {
+    "name": "soy",
+    "imageFile": "soy_bottle",
+    "description": "soy bottle description",
+    "size": 10,
+    "price": 35.87
+  },
+  {
+    "name": "ketchup",
+    "imageFile": "ketchup_bottle",
+    "description": "ketchup bottle description",
+    "size": 20,
+    "price": 54.35
+  }
+]
