@@ -18,9 +18,11 @@ class MainViewModel(app:Application): AndroidViewModel(app) {
     var productRepository: ProductRepository = ProductRepository()
 
     init {
-        val data = productRepository.getTextFromAssets(app, "product.json")
+        val data = productRepository.getProducts(app, "product.json")
+        data?.forEach{
+            Log.i("Data","data: ${it.name}")
+        }
 
-        Log.i("Data","data: $data")
     }
 
     init {
