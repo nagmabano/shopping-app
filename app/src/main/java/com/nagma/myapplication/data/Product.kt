@@ -1,7 +1,9 @@
 package com.nagma.myapplication.data
 
+import com.squareup.moshi.Json
+
 data class Product(
-    val name: String,
+    @Json(name = "productName") val name: String,
     val imageFile:String,
     val description:String,
     val size: Int,
