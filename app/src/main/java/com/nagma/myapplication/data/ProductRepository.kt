@@ -28,25 +28,32 @@ class ProductRepository {
         retrofit.create(ProductApi::class.java)
     }
 
-    fun getTextFromResource(context: Context, resourceId: Int): String {
-        return context.resources.openRawResource(resourceId)
-            .bufferedReader()
-            .use { it.readText() }
-    }
+//    fun getTextFromResource(context: Context, resourceId: Int): String {
+//        return context.resources.openRawResource(resourceId)
+//            .bufferedReader()
+//            .use { it.readText() }
+//    }
+//
+//    fun getTextFromAssets(context: Context, fileName: String): String {
+//        return context.resources.assets.open(fileName)
+//            .bufferedReader()
+//            .use { it.readText() }
+//    }
 
-    fun getTextFromAssets(context: Context, fileName: String): String {
-        return context.resources.assets.open(fileName)
-            .bufferedReader()
-            .use { it.readText() }
-    }
+    suspend fun getProducts(): List<Product> {
+        val response = productApi.getProducts()
+        return if (response.isSuccessful)
+            response.body() ?: emptyList()
+        else
+            emptyList()
 
-    fun getProducts(context: Context, fileName: String): List<Product>? {
-        val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
-        val listType = Types.newParameterizedType(
-            List::class.java, Product::class.java
-        )
-        val adapter: JsonAdapter<List<Product>> = moshi.adapter(listType)
 
-        return adapter.fromJson(getTextFromAssets(context, fileName))
+//        val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
+//        val listType = Types.newParameterizedType(
+//            List::class.java, Product::class.java
+//        )
+//        val adapter: JsonAdapter<List<Product>> = moshi.adapter(listType)
+//
+//        return adapter.fromJson(getTextFromAssets(context, fileName))
     }
 }
