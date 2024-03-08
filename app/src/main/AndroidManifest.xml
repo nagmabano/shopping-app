@@ -17,7 +17,6 @@
         <activity
             android:name=".ProductActivity"
             android:exported="true"
-            android:label="@string/title_activity_product"
             android:theme="@style/Theme.MyApplication">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
