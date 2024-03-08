@@ -7,6 +7,7 @@ import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.create
 
 const val BASE_ENDPOINT_URL = "https://2873199.youcanlearnit.net/"
 
@@ -19,6 +20,12 @@ class ProductRepository {
             .baseUrl(BASE_ENDPOINT_URL)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
+    }
+
+    // to create a single/one instance we use lazy. Also it will wait for the first instance and then execute.
+
+    private val productApi: ProductApi by lazy {
+        retrofit.create(ProductApi::class.java)
     }
 
     fun getTextFromResource(context: Context, resourceId: Int): String {
