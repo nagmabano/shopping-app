@@ -18,7 +18,7 @@ class MainViewModel(app:Application): AndroidViewModel(app) {
     var productRepository: ProductRepository = ProductRepository()
 
     init {
-        val data = productRepository.getTextFromResource(app, R.raw.product)
+        val data = productRepository.getTextFromAssets(app, "product.json")
 
         Log.i("Data","data: $data")
     }
