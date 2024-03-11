@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nagma.myapplication.data.Product
 import com.nagma.myapplication.databinding.ProductItemBinding
+import java.text.NumberFormat
 
 class ProductAdapter(private val items: List<Product>):
     RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
@@ -23,6 +24,15 @@ class ProductAdapter(private val items: List<Product>):
     }
 
     override fun onBindViewHolder(holder:ViewHolder, position: Int) {
+        val product = items[position]
+
+        with(holder.binding) {
+            productNameText.text = product.name
+            sizeText.text = sizeText.context.resources.getString(
+                R.string.product_size_label,
+                product.size)
+            priceText.text = NumberFormat.getCurrencyInstance().format(product.price)
+        }
 
     }
 

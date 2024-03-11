@@ -1,6 +1,7 @@
 package com.nagma.myapplication
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -19,6 +20,11 @@ class ProductActivity : AppCompatActivity() {
 
         binding = ActivityProductBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val viewModel by viewModels<MainViewModel>()
+        viewModel.products.observe(this) { products ->
+            binding.productList.adapter = ProductAdapter(products)
+        }
 
         setSupportActionBar(binding.toolbar)
     }

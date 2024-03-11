@@ -50,4 +50,5 @@
     </string>
     <string name="product_label">Our Products\n</string>
     <string name="description_label">Description</string>
+    <string name="product_size_label">%d ml of bottle</string>
 </resources>
