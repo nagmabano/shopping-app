@@ -8,7 +8,7 @@ import com.nagma.myapplication.data.Product
 import com.nagma.myapplication.databinding.ProductItemBinding
 import java.text.NumberFormat
 
-class ProductAdapter(private val items: List<Product>):
+class ProductAdapter(private val items: List<Product>,private val onItemClick: (Product) -> Unit):
     RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding: ProductItemBinding)
@@ -36,6 +36,10 @@ class ProductAdapter(private val items: List<Product>):
                 R.string.product_size_label,
                 product.size)
             priceText.text = NumberFormat.getCurrencyInstance().format(product.price)
+        }
+
+        holder.itemView.setOnClickListener{
+            onItemClick(product)
         }
 
     }
