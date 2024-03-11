@@ -11,9 +11,15 @@
         <item name="colorOnSecondary">@color/white</item>
         <item name="materialButtonStyle">@style/MyButton</item>
     </style>
+
     <style name="MyButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:textColor">@color/white</item>
         <item name="iconTint">@color/colorAccent</item>
         <item name="android:background">@color/colorPrimary</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 </resources>

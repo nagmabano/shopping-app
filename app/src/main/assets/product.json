@@ -1,0 +1,30 @@
+[
+  {
+    "productName": "Chili",
+    "imageFile": "chili_bottle",
+    "description": "chili bottle description",
+    "size": 20,
+    "price": 54.35
+  },
+  {
+    "productName": "honey",
+    "imageFile": "honey_bottle",
+    "description": "honey bottle description",
+    "size": 30,
+    "price": 46.35
+  },
+  {
+    "productName": "soy",
+    "imageFile": "soy_bottle",
+    "description": "soy bottle description",
+    "size": 10,
+    "price": 35.87
+  },
+  {
+    "productName": "ketchup",
+    "imageFile": "ketchup_bottle",
+    "description": "ketchup bottle description",
+    "size": 20,
+    "price": 54.35
+  }
+]
