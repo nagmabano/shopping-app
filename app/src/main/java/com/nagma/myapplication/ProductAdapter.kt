@@ -3,6 +3,7 @@ package com.nagma.myapplication
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.nagma.myapplication.data.Product
 import com.nagma.myapplication.databinding.ProductItemBinding
 import java.text.NumberFormat
@@ -27,6 +28,9 @@ class ProductAdapter(private val items: List<Product>):
         val product = items[position]
 
         with(holder.binding) {
+            productImage.load(product.imageFile) {
+                crossfade(100)
+            }
             productNameText.text = product.name
             sizeText.text = sizeText.context.resources.getString(
                 R.string.product_size_label,

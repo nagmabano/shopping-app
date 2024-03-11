@@ -62,6 +62,8 @@ dependencies {
 
     implementation("androidx.core:core-ktx:1.9.0")
 
+    implementation("io.coil-kt:coil:2.6.0")
+
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
 
